@@ -43,3 +43,22 @@ git push origin my-new-feature
 
 If you encounter any bugs or have feature requests, please open an issue on the GitHub repository. Please provide as much detail as possible, including steps to reproduce the issue and any relevant error messages or logs.
 
+
+
+## Linting
+
+1. First run pylint src/
+```zsh
+pylint src/
+```
+
+2. Then use autopep to recursively lint directory src/ 
+```zsh
+autopep8 --in-place --aggressive --recursive src/
+```
+
+3. Black is also an autoformatter included in this package
+```zsh
+
+black --line-length=120 .
+```
