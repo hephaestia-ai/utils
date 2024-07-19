@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='open-ai-file-management',
+    name='cowgirl-ai-file-manager',
     version='0.1.0',
     description='Interacting with the Open AI API',
     long_description=open('README.md').read(),
