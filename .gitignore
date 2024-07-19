@@ -1,0 +1,7 @@
+.venv
+**/__pycache__
+**/.pytest_cache
+
+
+# For Vector ID storage
+config.py
