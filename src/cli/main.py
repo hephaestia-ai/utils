@@ -43,8 +43,7 @@ def get_load_status(vector_id):
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="CLI tool for file management.")
+    parser = argparse.ArgumentParser(description="CLI tool for file management.")
     subparsers = parser.add_subparsers(dest="command")
 
     vector_id_parser = subparsers.add_parser(
