@@ -1,9 +1,9 @@
 import argparse
 import os
 import sys
-from src.load_files.search import Search
-from src.load_files.file_manager import FileManager
-from src.load_files.vector_manager import VectorManager
+from src.cowgirl_ai.load_files.search import Search
+from src.cowgirl_ai.load_files.file_manager import FileManager
+from src.cowgirl_ai.load_files.vector_manager import VectorManager
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 

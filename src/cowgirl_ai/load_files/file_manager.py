@@ -5,7 +5,7 @@ https://platform.openai.com/docs/assistants/tools/file-search
 
 """
 
-from src.load_files.client import Client
+from src.cowgirl_ai.load_files.client import Client
 import logging
 
 logging.basicConfig(

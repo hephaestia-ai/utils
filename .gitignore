@@ -5,7 +5,7 @@
 
 # For Vector ID storage
 config.py
-file_management.egg-info
+cowgirl_ai.egg-info
 dist
 
 node_modules/
