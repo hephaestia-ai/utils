@@ -13,7 +13,7 @@ def read_requirements():
 
 
 setup(
-    name="cowgirl-ai-file-manager",
+    name="file-management",
     version="1.0.7",
     description="Interacting with the Open AI API",
     long_description=open("README.md").read(),
@@ -22,7 +22,8 @@ setup(
     author="Tera Earlywine",
     author_email="dev@teraearlywine.com",
     # license='MIT',
-    packages=find_packages(),
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     install_requires=read_requirements(),
     python_requires=">=3.10",
     entry_points={
