@@ -23,10 +23,15 @@ class CLI:
         stack.search(directory, extension)
         return stack.data
 
-    def load_files(self, vector_id, directory, extension):
-        """Using the file manager to batch upload loaded files to specific vector."""
-        file_manager = FileManager()
-        file_manager.batch_upload(vector_id, loaded_files=self.search_files(directory, extension))
+    # TODO: fix this -- data is not being uploaded correctly
+    # def load_files(self, vector_id, directory, extension):
+    #     """Using the file manager to batch upload loaded files to specific vector."""
+    #     file_manager = FileManager()
+    #     stack = Search()
+    #     stack.search(directory, extension)
+    #     loaded_files = stack.data
+
+    #     file_manager.batch_upload(vector_id, loaded_files=loaded_files)
 
     def run(self):
         """
@@ -40,10 +45,10 @@ class CLI:
         search_parser.add_argument("directory", type=str, help="Directory to search")
         search_parser.add_argument("extension", type=str, help="File extension to search for")
 
-        batch_upload_parser = subparsers.add_parser("batch-upload", help="Batch upload loaded files to vector")
-        batch_upload_parser.add_argument("vector_id", type=str, help="ID of the vector store you would like to add files to")
-        batch_upload_parser.add_argument("directory", type=str, help="Directory to search")
-        batch_upload_parser.add_argument("extension", type=str, help="File extension to search for")
+        # batch_upload_parser = subparsers.add_parser("batch-upload", help="Batch upload loaded files to vector")
+        # batch_upload_parser.add_argument("vector_id", type=str, help="ID of the vector store you would like to add files to")
+        # batch_upload_parser.add_argument("directory", type=str, help="Directory to search")
+        # batch_upload_parser.add_argument("extension", type=str, help="File extension to search for")
 
         args = parser.parse_args()
 
