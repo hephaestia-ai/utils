@@ -1,4 +1,5 @@
 import argparse
+import os
 from load_files.search import Search
 from load_files.file_manager import FileManager
 from load_files.vector_manager import VectorManager
@@ -12,7 +13,7 @@ from load_files.vector_manager import VectorManager
 
 def get_vector_id(store_name):
     """Get vector id for files to be uploaded to."""
-    return vector_ids.get(store_name)
+    return os.getenv('VECTOR_STORE') # FIX
 
 
 def search_files(directory, extension):
