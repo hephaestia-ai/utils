@@ -14,7 +14,7 @@ class CLI:
     Class for cli related arguments
     """
     def __init__(self):
-        pass
+        self.run()
 
 
     def search_files(self, directory, extension):
@@ -55,4 +55,4 @@ class CLI:
 
 
 if __name__=="__main__":
-    CLI().run()
+    CLI()
