@@ -12,6 +12,15 @@ This project provides a Python-based solution for managing files and vector stor
 
 ## Installation
 
+Using PIP / PyPI:
+
+```
+pip install cowgirl-ai-file-manager
+
+```
+
+
+Using GitHub
 1. Clone the repository:
 
 ```zsh
