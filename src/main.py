@@ -1,15 +1,11 @@
 import argparse
 import os
-from load_files.search import Search
-from load_files.file_manager import FileManager
-from load_files.vector_manager import VectorManager
+# import sys
+from src.load_files.search import Search
+from src.load_files.file_manager import FileManager
+from src.load_files.vector_manager import VectorManager
 
-
-# Get vector id for files to be uploaded to
-# Development vector is for testing purposes only.
-# Vectors align with different types of assistants, and should be immutable
-# vector_id = vector_ids.get('development_vector')
-
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def get_vector_id():
     """Get vector id for files to be uploaded to."""
