@@ -1,0 +1,12 @@
+{
+  "name": "file-management",
+  "version": "1.0.1",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
+}
