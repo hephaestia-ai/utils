@@ -11,7 +11,7 @@ from load_files.vector_manager import VectorManager
 # vector_id = vector_ids.get('development_vector')
 
 
-def get_vector_id(store_name):
+def get_vector_id():
     """Get vector id for files to be uploaded to."""
     return os.getenv('VECTOR_STORE') # FIX
 
