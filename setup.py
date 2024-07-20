@@ -14,7 +14,7 @@ def read_requirements():
 
 setup(
     name="file-management",
-    version="1.0.7",
+    version="1.0.8",
     description="Interacting with the Open AI API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
