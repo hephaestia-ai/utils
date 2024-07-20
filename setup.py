@@ -14,7 +14,7 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai-file-manager",
-    version="1.0.3",
+    version="1.0.4",
     description="Interacting with the Open AI API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -27,7 +27,7 @@ setup(
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
-            "mgr=src.main:main",
+            "cowgirl-ai=src.main:main",
         ],
     },
     include_package_data=True,

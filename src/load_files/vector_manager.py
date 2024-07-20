@@ -2,7 +2,7 @@
 https://platform.openai.com/docs/api-reference/vector-stores/create
 """
 
-from load_files.client import Client
+from src.load_files.client import Client
 import logging
 
 logging.basicConfig(
