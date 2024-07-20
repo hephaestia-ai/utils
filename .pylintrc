@@ -32,6 +32,7 @@ disable=
     R1710,  # inconsistent-return-statements
     W0201,  # attribute-defined-outside-init
     E1121,  # too-many-function-args
+    E0401,  # Missed on github
     
 # Enable the message, report, category or checker with the given id(s). You
 # can either give multiple identifier separated by comma (,) or put this
