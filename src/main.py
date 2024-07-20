@@ -1,11 +1,11 @@
 import argparse
 import os
-# import sys
+import sys
 from src.load_files.search import Search
 from src.load_files.file_manager import FileManager
 from src.load_files.vector_manager import VectorManager
 
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def get_vector_id():
     """Get vector id for files to be uploaded to."""
