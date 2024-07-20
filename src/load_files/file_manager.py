@@ -5,7 +5,7 @@ https://platform.openai.com/docs/assistants/tools/file-search
 
 """
 
-from src.client import Client
+from load_files.client import Client
 import logging
 
 logging.basicConfig(

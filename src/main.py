@@ -1,5 +1,4 @@
 import argparse
-from src.config import vector_ids
 from load_files.search import Search
 from load_files.file_manager import FileManager
 from load_files.vector_manager import VectorManager
