@@ -92,3 +92,15 @@ autopep8 --in-place --aggressive --recursive src/
 
 black --line-length=120 .
 ```
+
+
+```
+git checkout -b release/1.0.0
+
+git tag -a v1.0.0 -m "Release 1.0.0"
+git push origin v1.0.0
+gh release create v1.0.0
+
+git push --follow-tags origin main
+gh release create $(git describe --tags `git rev-list --tags --max-count=1`) -F CHANGELOG.md
+```
