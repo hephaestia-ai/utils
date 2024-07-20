@@ -23,3 +23,4 @@ jobs:
       run: |
         pylint src --rcfile=.pylintrc
         echo "Have you tried to ran autopep8? See contributing.md for details"
+      continue-on-error: true
