@@ -47,9 +47,9 @@ If you encounter any bugs or have feature requests, please open an issue on the 
 
 ## Linting
 
-1. First run pylint src/
+1. First run pylint
 ```zsh
-pylint src/
+pylint src --rcfile=.pylintrc 
 ```
 
 2. Then use autopep to recursively lint directory src/ 

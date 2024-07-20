@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from load_files.client import ConfigOpenAI, Client
+from src.load_files.client import ConfigOpenAI, Client
 
 
 def test_config_openai():
@@ -15,7 +15,7 @@ def test_config_openai():
 
 def test_client_initialization():
     with patch("os.getenv", return_value="test_api_key"):
-        with patch("src.client.OpenAI") as mock_openai:
+        with patch("src.load_files.client.OpenAI") as mock_openai:
             mock_client = MagicMock()
             mock_openai.return_value = mock_client
             client = Client()
