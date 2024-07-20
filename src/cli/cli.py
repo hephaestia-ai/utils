@@ -1,7 +1,7 @@
 import argparse
 import logging
 from cowgirl_ai.load_files.search import Search
-from cowgirl_ai.load_files.file_manager import FileManager
+# from cowgirl_ai.load_files.file_manager import FileManager
 # from cowgirl_ai.load_files.vector_manager import VectorManager
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
