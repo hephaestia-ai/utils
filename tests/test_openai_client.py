@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.client import ConfigOpenAI, Client
+from load_files.client import ConfigOpenAI, Client
 
 
 def test_config_openai():
