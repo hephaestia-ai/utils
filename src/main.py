@@ -26,7 +26,7 @@ def search_files(directory, extension):
 def load_files(vector_id):
     """Using the file manager to batch upload loaded files to specific vector."""
     file_manager = FileManager()
-    file_manager.batch_upload(
+    return file_manager.batch_upload(
         vector_id, loaded_files=search_files(
             "src", ".py"))
 
@@ -34,15 +34,15 @@ def load_files(vector_id):
 def load_file(file_name, purpose):
     """Load a singular file, provide full name and upload purpose."""
     file_manager = FileManager()
-    file_manager.upload(file_name, purpose)
-    return None
+    return file_manager.upload(file_name, purpose)
 
 
 def get_load_status(vector_id):
     """Get the load status of files in a vector."""
     vector_manager = VectorManager()
     vector_metadata = vector_manager.get_vector_file_counts(
-        vector_id=vector_id)
+        vector_id=vector_id
+    )
     return vector_metadata
 
 

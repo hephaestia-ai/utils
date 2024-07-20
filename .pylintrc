@@ -27,7 +27,8 @@ disable=
     R0903,  # Too few public methods (useful for data classes)
     R0201,  # Method could be a function (often useful in classes)
     R0913,  # Too many arguments
-
+    C0411,  # Python libraries and builtins place before 3rd party
+    W1203,   # Use lazy % formatting in logging functions (logging-fstring-interpolation)
 # Enable the message, report, category or checker with the given id(s). You
 # can either give multiple identifier separated by comma (,) or put this
 # option multiple times.

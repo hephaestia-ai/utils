@@ -4,7 +4,6 @@ https://platform.openai.com/docs/api-reference/vector-stores/create
 
 from src.client import Client
 import logging
-import pandas as pd
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,7 +50,7 @@ class VectorManager(Client):
 
         files = self.list()
         for file in files:
-            self.add_record(args=file)
+            self.add_record(file)
 
         confirmation = input(
             "Are you sure you want to delete all? (y/N): ").strip().lower()
@@ -60,7 +59,7 @@ class VectorManager(Client):
                 self.client.beta.vector_stores.delete(record)
             logging.info(f"All {len(self.data)} records have been deleted")
         else:
-            logging.info(f"Deletion canceled")
+            logging.info("Deletion canceled")
 
     def create_new_vector_store(self, name):
         """
@@ -99,6 +98,7 @@ class VectorManager(Client):
 
         """
         )
+        return file_counts
 
 
 if __name__ == "__main__":

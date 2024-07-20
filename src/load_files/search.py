@@ -58,11 +58,11 @@ class Search:
             >>> next(iter_stack)
             'tests/test_openai_client.py'
         """
-        self._index = 0
-        return self
+        self._index = 0 # pylint disable=attribute-defined-outside-init
+        return self # pylint disable=attribute-defined-outside-init
 
-    def __next__(self):
-        """
+    def __next__(self): #pylint disable=inconsistent-return-statements
+        """ 
         Returns the next file found in the iteration.
 
         Usage::
@@ -80,7 +80,7 @@ class Search:
                 return result
         except StopIteration as err:
             # Once the list or object is complete, this raises stop iterable
-            logging.info("Processing completed {err}")
+            logging.info(f"Processing completed {err}")
         # return result
 
 

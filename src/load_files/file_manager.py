@@ -6,10 +6,7 @@ https://platform.openai.com/docs/assistants/tools/file-search
 """
 
 from src.client import Client
-
-import pandas as pd
 import logging
-import os
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,13 +14,13 @@ logging.basicConfig(
     format="%(levelname)s - %(asctime)s - %(message)s")
 
 
-class FileManager(Client):
+class FileManager(Client):  # pylint: disable=useless-parent-delegation
     """
     For iterating over requests with the OpenAI file storage.
     """
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self):  # pylint: disable=useless-parent-delegation
+        super().__init__() # pylint: disable=useless-parent-delegation
 
     def list(self):
         """
@@ -53,7 +50,7 @@ class FileManager(Client):
                 self.client.files.delete(record)
             logging.info(f"All {len(loaded_files)} records have been deleted")
         else:
-            logging.info(f"Deletion canceled")
+            logging.info("Deletion canceled")
 
     def upload(self, file_name, purpose):
         """
@@ -85,17 +82,17 @@ class FileManager(Client):
         """
 
         try:
-            self.file_streams = [open(file, "rb") for file in loaded_files]
-            self.file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-                vector_store_id=vector_id, files=self.file_streams)
-            self.batch_status = self.file_batch.status
-            self.batch_file_counts = self.file_batch.file_counts
+            self.file_streams = [open(file, "rb") for file in loaded_files]                 # pylint: disable=attribute-defined-outside-init, consider-using-with
+            self.file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(  # pylint: disable=attribute-defined-outside-init
+                vector_store_id=vector_id, files=self.file_streams)                         # pylint: disable=attribute-defined-outside-init
+            self.batch_status = self.file_batch.status                                      # pylint: disable=attribute-defined-outside-init
+            self.batch_file_counts = self.file_batch.file_counts                            # pylint: disable=attribute-defined-outside-init
 
             logging.info(f"Batch Status: {self.batch_status}")
             logging.info(f"Batch file counts: {self.batch_file_counts}")
-            logging.info(f"Upload complete")
-        except Exception as err:
-            logging.error(f"Houston we have a problem: {err}")
+            logging.info("Upload complete")
+        except Exception as err: # pylint: disable=broad-exception-caught
+            logging.error(f"Houston we have a problem: {err}") # pylint: disable=broad-exception-caught
 
 
 if __name__ == "__main__":
