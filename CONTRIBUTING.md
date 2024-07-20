@@ -43,6 +43,36 @@ git push origin my-new-feature
 
 If you encounter any bugs or have feature requests, please open an issue on the GitHub repository. Please provide as much detail as possible, including steps to reproduce the issue and any relevant error messages or logs.
 
+## Releases
+
+Semantic Versioning: Use semantic versioning (SemVer) to tag releases. This involves incrementing version numbers in the format MAJOR.MINOR.PATCH (e.g., 1.0.0).
++ MAJOR version for incompatible API changes.
++ MINOR version for adding functionality in a backwards-compatible manner.
++ PATCH version for backwards-compatible bug fixes.
+
+1.	Feature Development:
+    + Create a feature branch from develop.
+    + Opens a PR to merge the feature branch into develop.
+    + PR is reviewed, tested, and merged into develop.
+2.	Preparing a Release:
+    + Create a release branch from develop (release/1.0.0).
+	+ Perform final testing and apply any bug fixes.
+	+ Merge release/1.0.0 into main and tag the release (v1.0.0).
+	+ Merge release/1.0.0 back into develop.
+3.	Hotfix:
+    + Create a hotfix branch from main (hotfix/1.0.1).
+	+ Apply the fix, test, and merge back into main and develop.
+    + Tag the release (v1.0.1).
+
+
+
+Branching Strategy
+
++ Main Branch: The main (or master) branch should always reflect a production-ready state.
++ Develop Branch: A develop branch where ongoing development occurs. Features and fixes are integrated here.
++ Feature Branches: Create branches from develop for new features (feature/feature-name).
++ Release Branches: Create branches from develop when preparing a new release (release/x.y.z). This allows final testing and bug fixes.
++ Hotfix Branches: Create branches from main for critical fixes that need to be released immediately (hotfix/x.y.z).
 
 
 ## Linting
