@@ -17,6 +17,8 @@ Recursively search a specified directory for files with a specified extension. U
 
 ```
 
+Planned:
+
 ### Batch uploading files with recursive search for specific directory
 Recursively search a specified directory for files with a specified extension. Requires a vector id to perform a batch upload to openai file storage. Command automatically sends files to vector store, useages vary depending on assistant and project goals.
 
