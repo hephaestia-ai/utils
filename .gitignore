@@ -9,3 +9,4 @@ cowgirl_ai_file_manager.egg-info
 dist
 
 node_modules/
+build/
