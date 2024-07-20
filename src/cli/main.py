@@ -108,5 +108,3 @@ def main():
     elif args.command == "get-load-status":
         status = get_load_status(args.vector_id)
         print(f"Load status for vector ID {args.vector_id}: {status}")
-
-# print(main.__module__)
