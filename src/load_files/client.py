@@ -1,13 +1,19 @@
-from openai import OpenAI
 import os
+from openai import OpenAI
+
 
 class ConfigOpenAI:
+    """
+    Initializes environment and gets api key
+    """
+
     def __init__(self):
-        self.open_ai_api_key = os.getenv('OPENAI_API_KEY')
+        self.open_ai_api_key = os.getenv("OPENAI_API_KEY")
+
 
 class Client(ConfigOpenAI):
     """
-    Assistant Client 
+    Assistant Client
     ----------------
     Initializes client object for making API requests.
 
@@ -19,5 +25,5 @@ class Client(ConfigOpenAI):
         self.client = OpenAI(api_key=self.open_ai_api_key)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     Client()

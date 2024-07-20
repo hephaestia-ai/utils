@@ -29,3 +29,5 @@ export OPENAI_API_KEY=your_api_key_here
 ```
 
 This README provides an overview of the project, its features, installation instructions, usage examples, contributing guidelines, and licensing information. 
+
+
