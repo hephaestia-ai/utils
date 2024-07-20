@@ -2,7 +2,7 @@
 https://platform.openai.com/docs/api-reference/vector-stores/create
 """
 
-from src.cowgirl_ai.load_files.client import Client
+from cowgirl_ai.load_files.client import Client
 import logging
 
 logging.basicConfig(
