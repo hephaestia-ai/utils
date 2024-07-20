@@ -21,5 +21,5 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint src
+        pylint src --rcfile=.pylintrc
         echo "Have you tried to ran autopep8? See contributing.md for details"
