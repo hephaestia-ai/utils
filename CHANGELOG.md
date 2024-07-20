@@ -1,5 +1,8 @@
-# Changelog
+## What's Changed
+* Build by @teraearlywine in https://github.com/Cowgirl-AI/file-management/pull/6
+* delete publish yml, not working for now by @teraearlywine in https://github.com/Cowgirl-AI/file-management/pull/7
+* * by @teraearlywine in https://github.com/Cowgirl-AI/file-management/pull/8
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.0.1](https://github.com/teraearlywine/file-management/compare/v1.0.0...v1.0.1) (2024-07-20)
+**Full Changelog**: https://github.com/Cowgirl-AI/file-management/compare/v1.0.2...v1.0.5
+
