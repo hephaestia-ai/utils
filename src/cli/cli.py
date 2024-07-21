@@ -13,16 +13,6 @@ def search_files(directory, extension):
     stack.search(directory, extension)
     return stack.data
 
-# TODO: fix this -- data is not being uploaded correctly
-# def load_files(vector_id, directory, extension):
-#     """Using the file manager to batch upload loaded files to specific vector."""
-#     file_manager = FileManager()
-#     stack = Search()
-#     stack.search(directory, extension)
-#     loaded_files = stack.data
-
-    #     file_manager.batch_upload(vector_id, loaded_files=loaded_files)
-
 def run():
     """
     Set up argparse and run commands
@@ -35,19 +25,11 @@ def run():
     search_parser.add_argument("directory", type=str, help="Directory to search")
     search_parser.add_argument("extension", type=str, help="File extension to search for")
 
-    # batch_upload_parser = subparsers.add_parser("batch-upload", help="Batch upload loaded files to vector")
-    # batch_upload_parser.add_argument("vector_id", type=str, help="ID of the vector store you would like to add files to")
-    # batch_upload_parser.add_argument("directory", type=str, help="Directory to search")
-    # batch_upload_parser.add_argument("extension", type=str, help="File extension to search for")
-
     args = parser.parse_args()
 
     if args.command == "search-files":
         files = search_files(args.directory, args.extension)
         logging.info(f"Files to load: {files}")
-    # elif args.command == "batch-upload":
-        # load_files(args.vector_id, args.directory, args.extension)
-
 
 if __name__=="__main__":
     run()
