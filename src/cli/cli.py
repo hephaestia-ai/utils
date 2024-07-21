@@ -1,6 +1,6 @@
 import argparse
 import logging
-from cowgirl_ai.load_files.search import Search
+from cowgirl_ai.search.search import Search
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
 
