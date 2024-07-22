@@ -1,14 +1,12 @@
 # https://platform.openai.com/docs/assistants/tools/file-search
 from src.cowgirl_ai.client import Client
 from src.cowgirl_ai.error_handler import error_handler
-from openai import OpenAI
 import logging
-import time 
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
 
 
-class VectorInteractions(Client): 
+class VectorInteractions(Client):
     """
     Vector Interactions Class
     -------------------------
@@ -59,7 +57,8 @@ class VectorInteractions(Client):
         make a request to vector stores using retrieve/vectorID. 
         
         Compare the provided class attribute vector_name against the vector name result from the API request
-        to validate if the vector store name is accurate. If the response name doesn't match the class attribute vector_name, fail. 
+        to validate if the vector store name is accurate. If the response name doesn't match 
+        the class attribute vector_name, fail. 
         Otherwise vector store exists
 
         Returns
@@ -89,7 +88,7 @@ class VectorInteractions(Client):
         Returns a bool if created successfully, otherwise returns False. 
         """
         success = True
-        if self.check_if_vector_store_exists() == False:
+        if self.check_if_vector_store_exists() is False:
             command = input(f'Vector store does not exist, would you like to create: {self.vector_name} (y/N) ?')
             if command == "y":
                 logging.info(f"Creating {self.vector_name}")
@@ -108,23 +107,22 @@ class VectorInteractions(Client):
         file_paths = ["/Users/teraearlywine/Cowgirl-AI/file-management/setup.py", \
             "/Users/teraearlywine/Cowgirl-AI/file-management/requirements.txt"]
         """
-        if self.check_if_vector_store_exists() == False:
+        if self.check_if_vector_store_exists() is False:
             self.create_vector()
 
         vector_store_dict = self.get_latest_vector_id()
         vector_id = vector_store_dict.get(f'{self.vector_name}')
         if file_paths is not None:
             logging.info(f"Files to upload: {len(file_paths)}")
-            file_streams = [open(path, "rb") for path in file_paths]
-            file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-                vector_store_id=vector_id, files=file_streams
-            )
-            logging.info(f"Status: {file_batch.status}")
-            logging.info(f"File counts: {file_batch.file_counts}")
-            return True
-        else: 
-            logging.info(f"No file object paths provided, please add.")
-            return False
+            # file_streams = [open(path, "rb") for path in file_paths]
+            with [open(path, "rb") for path in file_paths] as file_streams:
+                file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
+                    vector_store_id=vector_id, files=file_streams
+                )
+                logging.info(f"Status: {file_batch.status}")
+                logging.info(f"File counts: {file_batch.file_counts}")
+                return True
+        return False
 
     @error_handler 
     def search_vectors(self):
@@ -144,12 +142,8 @@ class VectorInteractions(Client):
         vector_ids = []
         while counter <= 5: # Setting arbitrary limit to reach (no more than 5 vectors)
             response = self.client.beta.vector_stores.list(after=vector_id, limit=1, order="desc")
-            result = response.data 
-            id = [v.id for v in result]
-            if not id:
-                
+            if not response.data:
                 break       
-
             for vector in response.data: 
                 next_vector_id = vector.id
                 vector_ids.append(next_vector_id)
@@ -160,5 +154,3 @@ class VectorInteractions(Client):
 
 if __name__=="__main__":
     VectorInteractions()
-
-    
