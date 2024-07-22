@@ -88,4 +88,3 @@ class AssistantInteractions(Client):
 
 if __name__=="__main__":
     AssistantInteractions()
-    
