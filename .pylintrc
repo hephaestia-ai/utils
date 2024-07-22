@@ -33,6 +33,8 @@ disable=
     W0201,  # attribute-defined-outside-init
     E1121,  # too-many-function-args
     E0401,  # Missed on github
+    W0718,  # Broad exception caught
+    E0611, 
     
 # Enable the message, report, category or checker with the given id(s). You
 # can either give multiple identifier separated by comma (,) or put this
