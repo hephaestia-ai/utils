@@ -10,6 +10,6 @@ def api_error_handler(func):
         try:
             return func(*args, **kwargs)
         except Exception as err:
-            logging.info(f"Error connecting to API: \n\n {err} \n\n")
+            logging.info(f"Houston, we have a problem: \n\n {err} \n\n")
             return None
     return wrapper
