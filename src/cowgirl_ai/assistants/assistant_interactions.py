@@ -1,6 +1,6 @@
 from src.cowgirl_ai.client import Client
 from src.cowgirl_ai.error_handler import error_handler
-from openai import OpenAI
+
 import logging
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
@@ -30,7 +30,7 @@ class AssistantInteractions(Client):
 
         response = self.client.beta.assistants.list(order="desc")
         for assistant in response.data: 
-            yield assistant
+            yield from assistant
     
     @error_handler
     def create_assistant_dict(self):
@@ -58,23 +58,24 @@ class AssistantInteractions(Client):
         assistant.
 
         Usage::
-            >>> interactions = Interactions(vector_name='Development - Data Ingestion Vector', assistant_name='Data Engineer')
+            >>> interactions = Interactions(vector_name='Development -
+              Data Ingestion Vector', assistant_name='Data Engineer')
             >>> interactions.update_assistant_to_use_vector() 
 
         """
 
         if self.assistant_name is None:
-            logging.info(f'Updating latest created assistant to reference vector stores')
+            logging.info('Updating latest created assistant to reference vector stores')
         else:
             logging.info(f'Updating {self.assistant_name} to reference vector store')
 
         success = False
         try:
             # Create a dictionary with current assistant names & id
-            assistant_dict = self.create_assistant_dict()
+            self.create_assistant_dict()
             assistant_id = self.assistant_dict.get(f'{self.assistant_name}')
 
-            assistant = self.client.beta.assistants.update(
+            self.client.beta.assistants.update(
                 assistant_id=assistant_id,
                 tool_resources={"file_search": {"vector_store_ids": [vector_id]}},
             )
