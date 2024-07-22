@@ -3,6 +3,7 @@ from src.cowgirl_ai.client import Client
 from src.cowgirl_ai.error_handler import error_handler
 from openai import OpenAI
 import logging
+import time 
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
 
@@ -125,6 +126,39 @@ class VectorInteractions(Client):
             logging.info(f"No file object paths provided, please add.")
             return False
 
+    @error_handler 
+    def search_vectors(self):
+        """
+        Returns a list of 5 vector ids. 
+
+        Usage:: 
+
+            >>> vector_interactions = VectorInteractions()
+            >>> vector_interactions.search_vectors()
+        """
+
+        vector_dict = self.get_latest_vector_id()
+        vector_id = vector_dict.get(f'{self.vector_name}')
+
+        counter=0
+        vector_ids = []
+        while counter <= 5: # Setting arbitrary limit to reach (no more than 5 vectors)
+            response = self.client.beta.vector_stores.list(after=vector_id, limit=1, order="desc")
+            result = response.data 
+            id = [v.id for v in result]
+            if not id:
+                
+                break       
+
+            for vector in response.data: 
+                next_vector_id = vector.id
+                vector_ids.append(next_vector_id)
+                vector_id = next_vector_id    # Update the cursor for the next iteration
+                counter += 1
+
+        return vector_ids
+
 if __name__=="__main__":
     VectorInteractions()
+
     
