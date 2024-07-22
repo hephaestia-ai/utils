@@ -28,6 +28,6 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest
+        pytest tests
       env:
         CI: true
