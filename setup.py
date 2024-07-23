@@ -28,7 +28,7 @@ setup(
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
-            "cowgirl-ai-utils=cli.cli:run",
+            "cowgirl-ai-utils=cli.cli:run"
         ],
     },
     include_package_data=True,
