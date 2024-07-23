@@ -13,9 +13,9 @@ def read_requirements():
 
 
 setup(
-    name="cowgirl-ai",
-    version="1.1.3",
-    description="Interacting with the Open AI API",
+    name="cowgirl-ai-utils",
+    version="1.0.0",
+    description="Utility class used for interacting with the Open AI API.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Cowgirl-AI/file-management",
@@ -28,7 +28,7 @@ setup(
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
-            "cowgirl-ai=cli.cli:run",
+            "cowgirl-ai-utils=cli.cli:run",
         ],
     },
     include_package_data=True,
