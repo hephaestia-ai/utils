@@ -114,14 +114,14 @@ class VectorInteractions(Client):
         vector_id = vector_store_dict.get(f'{self.vector_name}')
         if file_paths is not None:
             logging.info(f"Files to upload: {len(file_paths)}")
-            # file_streams = [open(path, "rb") for path in file_paths]
-            with [open(path, "rb") for path in file_paths] as file_streams:
-                file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-                    vector_store_id=vector_id, files=file_streams
-                )
-                logging.info(f"Status: {file_batch.status}")
-                logging.info(f"File counts: {file_batch.file_counts}")
-                return True
+            file_streams = [open(path, "rb") for path in file_paths]
+
+            file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
+                vector_store_id=vector_id, files=file_streams
+            )
+            logging.info(f"Status: {file_batch.status}")
+            logging.info(f"File counts: {file_batch.file_counts}")
+            return True
         return False
 
     @error_handler 
