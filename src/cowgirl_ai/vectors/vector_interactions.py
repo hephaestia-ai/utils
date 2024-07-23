@@ -1,6 +1,6 @@
 # https://platform.openai.com/docs/assistants/tools/file-search
-from src.cowgirl_ai.client import Client
-from src.cowgirl_ai.error_handler import error_handler
+from cowgirl_ai.client import Client
+from cowgirl_ai.error_handler import error_handler
 import logging
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(asctime)s - %(message)s")
