@@ -7,7 +7,6 @@ build==1.2.1
 certifi==2024.7.4
 charset-normalizer==3.3.2
 click==8.1.7
-# cowgirl-ai-file-manager==0.1.0
 dill==0.3.8
 distro==1.9.0
 docutils==0.21.2
