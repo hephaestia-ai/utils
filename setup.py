@@ -14,7 +14,7 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai",
-    version="1.0.24",
+    version="1.1.0",
     description="Interacting with the Open AI API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

@@ -1,5 +1,5 @@
-from src.cowgirl_ai.client import Client
-from src.cowgirl_ai.error_handler import error_handler
+from cowgirl_ai.client import Client
+from cowgirl_ai.error_handler import error_handler
 
 import logging
 
